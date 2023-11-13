@@ -19,3 +19,14 @@ spring:
             token-uri: http://localhost:8081/realms/test/protocol/openid-connect/token # token
             user-info-uri: http://localhost:8081/realms/test/protocol/openid-connect/userinfo # userinfo -> 클라이언트 -> 사용자 대신해서 권한 부여 -> 인증처리를 위해
             user-name-attribute: preferred_username # ??? ? ?? ???
+#
+keycloak:
+  enabled: true
+  realm: ## realm 이름
+  auth-server-url: ## KeyCloak 서버 url
+  ssl-required: ## SSL 사용
+  resource: ## 클라이언트 이름
+  credentials:
+    secret: ## 클라이언트 비밀번호
+  use-resource-role-mappings: true # 롤 권한
+  bearer-only: true # bearer 토큰 요청 허가 여부
